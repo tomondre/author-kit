@@ -8,7 +8,7 @@
   font-family: var(--newsletter-font);
   margin-bottom: 0;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr minmax(280px, 40%);
   gap: 0 var(--newsletter-gap);
 }
 
@@ -69,8 +69,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 320px;
-  margin-left: auto;
 }
 
 .newsletter-header-image {
@@ -123,8 +121,3 @@
   }
 }
 
-@media (width >= 600px) {
-  .newsletter-header-media-inner {
-    max-width: 280px;
-  }
-}
