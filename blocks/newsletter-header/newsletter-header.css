@@ -1,0 +1,110 @@
+/* Newsletter header – matches product newsletter layout and styling */
+.newsletter-header {
+  --newsletter-red: #c71000;
+  --newsletter-label-color: #636363;
+  --newsletter-font: var(--font-family);
+
+  font-family: var(--newsletter-font);
+  margin-bottom: 0;
+}
+
+.newsletter-header-label {
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.newsletter-header-label-text {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--newsletter-label-color);
+}
+
+.newsletter-header-title-row {
+  margin: 0 0 var(--spacing-s) 0;
+}
+
+.newsletter-header-title {
+  margin: 0;
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+  color: var(--color-dark);
+}
+
+.newsletter-header-date-row {
+  margin: 0 0 var(--spacing-m) 0;
+}
+
+.newsletter-header-date {
+  margin: 0;
+  font-size: var(--body-font-size-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.newsletter-header-media {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-m);
+}
+
+.newsletter-header-media-inner {
+  position: relative;
+  flex-shrink: 0;
+  max-width: 320px;
+}
+
+.newsletter-header-image {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.newsletter-header-image picture {
+  display: block;
+}
+
+.newsletter-header-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Badge overlays image when both present */
+.newsletter-header-media-inner:has(.newsletter-header-image) .newsletter-header-badge {
+  position: absolute;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+  z-index: 1;
+}
+
+.newsletter-header-media-inner:not(:has(.newsletter-header-image)) .newsletter-header-badge {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  color: var(--color-gray-700);
+}
+
+.newsletter-header-separator {
+  height: 3px;
+  background-color: var(--newsletter-red);
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  .newsletter-header-media {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .newsletter-header-image {
+    max-width: 280px;
+  }
+}

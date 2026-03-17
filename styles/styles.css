@@ -312,6 +312,34 @@ main {
   }
 }
 
+/* Newsletter section: body text and links match product newsletter styling */
+.section.has-newsletter > .default-content {
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  line-height: var(--body-line-height);
+}
+
+.section.has-newsletter > .default-content p {
+  margin: 0 0 1em 0;
+}
+
+.section.has-newsletter > .default-content p:last-child {
+  margin-bottom: 0;
+}
+
+.section.has-newsletter > .default-content a {
+  color: #2176ff;
+  text-decoration: underline;
+}
+
+.section.has-newsletter > .default-content a:hover {
+  text-decoration: none;
+}
+
+.section.has-newsletter > .default-content strong {
+  font-weight: 600;
+}
+
 button {
   cursor: pointer;
 }
