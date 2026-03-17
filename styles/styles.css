@@ -312,10 +312,24 @@ main {
   }
 }
 
-/* Newsletter section: body text and links match product newsletter styling */
-.section.has-newsletter > .default-content {
+/* Newsletter page: body and section always white */
+body.has-newsletter-page {
+  background-color: #fff;
+}
+
+.section.has-newsletter {
+  background-color: #fff;
+  color: var(--color-dark);
+}
+
+.section.has-newsletter > .default-content,
+.section.has-newsletter .newsletter-header,
+.section.has-newsletter .newsletter-list {
   font-family: var(--font-family);
   color: var(--color-dark);
+}
+
+.section.has-newsletter > .default-content {
   line-height: var(--body-line-height);
 }
 

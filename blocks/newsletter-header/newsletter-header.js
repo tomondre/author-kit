@@ -68,5 +68,8 @@ export default function init(el) {
   el.append(separator);
 
   const section = el.closest('.section');
-  if (section) section.classList.add('has-newsletter');
+  if (section) {
+    section.classList.add('has-newsletter');
+    document.body.classList.add('has-newsletter-page');
+  }
 }
