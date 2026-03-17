@@ -1,7 +1,20 @@
+const DEFAULT_HEADER_IMAGE = '/img/newsletter/header-default.png';
+
+function createDefaultPicture() {
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.src = DEFAULT_HEADER_IMAGE;
+  img.alt = '';
+  img.loading = 'eager';
+  picture.append(img);
+  return picture;
+}
+
 /**
  * Newsletter header block: label, title, date, optional image + badge, red separator.
  * Authoring: Row 1 = label (e.g. "PRODUCT NEWSLETTER"), Row 2 = main title, Row 3 = date,
  * Row 4 = optional picture and/or "For Internal Use Only" text.
+ * Default: gradient image with "For Internal Use Only" on the right when row 4 is empty.
  */
 export default function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
@@ -41,26 +54,39 @@ export default function init(el) {
     if (p) p.classList.add('newsletter-header-date');
   }
 
-  if (mediaRow) {
-    mediaRow.classList.add('newsletter-header-media');
-    const picture = mediaRow.querySelector('picture');
-    const text = mediaRow.querySelector('p');
-    if (picture || text) {
-      const wrap = document.createElement('div');
-      wrap.className = 'newsletter-header-media-inner';
-      if (picture) {
-        const imgWrap = document.createElement('div');
-        imgWrap.className = 'newsletter-header-image';
-        imgWrap.append(picture);
-        wrap.append(imgWrap);
-      }
-      if (text) {
-        text.classList.add('newsletter-header-badge');
-        wrap.append(text);
-      }
-      mediaRow.innerHTML = '';
-      mediaRow.append(wrap);
+  const picture = mediaRow?.querySelector('picture');
+  const badgeText = mediaRow?.querySelector('p');
+  const useDefaultImage = !picture;
+  const useDefaultBadge = !badgeText;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'newsletter-header-media-inner';
+  if (picture || useDefaultImage) {
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'newsletter-header-image';
+    imgWrap.append(picture || createDefaultPicture());
+    wrap.append(imgWrap);
+  }
+  if (badgeText || useDefaultBadge) {
+    const badge = badgeText || document.createElement('p');
+    if (!badgeText) {
+      badge.textContent = 'For Internal Use Only';
     }
+    badge.classList.add('newsletter-header-badge');
+    wrap.append(badge);
+  }
+
+  if (wrap.children.length) {
+    let mediaContainer = mediaRow;
+    if (!mediaContainer) {
+      mediaContainer = document.createElement('div');
+      mediaContainer.className = 'newsletter-header-media';
+      dateRow?.insertAdjacentElement('afterend', mediaContainer);
+    } else {
+      mediaContainer.classList.add('newsletter-header-media');
+      mediaContainer.innerHTML = '';
+    }
+    mediaContainer.append(wrap);
   }
 
   const separator = document.createElement('div');

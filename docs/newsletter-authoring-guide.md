@@ -24,13 +24,12 @@ Create a block with class `newsletter-header`. Use a **table** with 4 rows:
 | **Row 1** | Small grey label (uppercase) | `PRODUCT NEWSLETTER` |
 | **Row 2** | Main title | `Adobe Experience Manager and Agentic Web Newsletter` |
 | **Row 3** | Date/subtitle (bold) | `January and February 2026` |
-| **Row 4** | Image + badge (optional) | Add an image in one cell, and `For Internal Use Only` in another cell. Both go in the same row. The badge will overlay the image. |
+| **Row 4** | Image + badge (optional) | Add an image and/or `For Internal Use Only` to override defaults. **If row 4 is empty, a default gradient image with "For Internal Use Only" is shown on the right.** |
 
 **Row 4 details:**
-- **Cell 1:** Insert the header image (the vibrant gradient/abstract image)
-- **Cell 2:** `For Internal Use Only` (will appear as white text overlay on the image)
-
-If you only want the image, put just the image. If you only want the badge, put just the text.
+- **Default:** When row 4 is omitted or empty, a default gradient image with "For Internal Use Only" badge appears on the right.
+- **Cell 1:** Your custom image (optional)
+- **Cell 2:** Custom badge text (optional)
 
 ---
 
