@@ -320,6 +320,14 @@ body.has-newsletter-page {
 .section.has-newsletter {
   background-color: #fff;
   color: var(--color-dark);
+  padding: 0 24px;
+}
+
+.section.has-newsletter > .block-content,
+.section.has-newsletter > .default-content {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .section.has-newsletter > .default-content,
