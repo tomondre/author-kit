@@ -19,12 +19,14 @@ Your newsletter page has **one section** containing:
 
 Create a block with class `newsletter-header`. Use a **table** with 4 rows:
 
-| Row | What to fill in | Example |
-|-----|-----------------|---------|
-| **Row 1** | Small grey label (uppercase) | `PRODUCT NEWSLETTER` |
-| **Row 2** | Main title | `Adobe Experience Manager and Agentic Web Newsletter` |
-| **Row 3** | Date/subtitle (bold) | `January and February 2026` |
-| **Row 4** | Image + badge (optional) | Add an image and/or `For Internal Use Only` to override defaults. **If row 4 is empty, a default gradient image with "For Internal Use Only" is shown on the right.** |
+| Row | Edit text | What to fill in | Example |
+|-----|-----------|-----------------|---------|
+| **Row 1** | H6 or ¶ | Small grey label (uppercase) | `PRODUCT NEWSLETTER` |
+| **Row 2** | H1 | Main title | `Adobe Experience Manager and Agentic Web Newsletter` |
+| **Row 3** | H2 | Date/subtitle | `January and February 2026` |
+| **Row 4** | — | Image + badge (optional) | Add an image and/or `For Internal Use Only` to override defaults. **If row 4 is empty, a default gradient image with "For Internal Use Only" is shown on the right.** |
+
+**How to format:** Select the text in each row → **Edit text** → choose the option above. The block applies the correct newsletter styling (grey label, large title, bold date).
 
 **Row 4 details:**
 - **Default:** When row 4 is omitted or empty, a default gradient image with "For Internal Use Only" badge appears on the right.
@@ -35,14 +37,16 @@ Create a block with class `newsletter-header`. Use a **table** with 4 rows:
 
 ## 2. Default Content (Intro Paragraphs)
 
-After the header block, add **regular paragraphs** (not in a block table):
+After the header block, add **regular paragraphs** (not in a block table). Use **Edit text** in the UI to format:
 
-| Content | What to type |
-|---------|--------------|
-| Greeting | `**Team,**` (bold "Team" with comma) |
-| Paragraph 1 | `As we kick off 2026, the importance of brand experience has never been clearer. AI-driven traffic is growing at 693% YoY, and agentic commerce drives 31% higher conversion.` |
-| Paragraph 2 | `Adobe is uniquely positioned to help you win in this space. We've identified 3 critical priorities for 2026: (1) Be optimized for agents and AI-driven experiences, (2) Reimagine the human experience with AI, and (3) automate the operational complexity of content at scale.` |
-| Intro to list | `There's plenty more to share in this double issue of the newsletter, with a focus on our constantly evolving Agentic AI solutions:` |
+| Content | How to format |
+|---------|---------------|
+| Greeting | Type `Team,` then select it → **Edit text** → **H2** or keep as paragraph and use **Edit text** for bold if available |
+| Paragraph 1 | Normal paragraph (T or ¶) |
+| Paragraph 2 | Normal paragraph |
+| Intro to list | Normal paragraph |
+
+For **bold** text, use the toolbar or **Edit link** for links. Headings (H1–H6), blockquotes, and code can be applied via **Edit text**.
 
 ---
 
@@ -63,8 +67,9 @@ Create a block with class `newsletter-list`. Use a **table** with one row per bu
 Put a full `<ul><li>...</li><li>...</li></ul>` in one cell if your authoring supports it.
 
 **Formatting in list items:**
-- Bold the key term at the start: `**Brand Concierge:**`
-- Add links where needed: `[try-before-you-buy program](url)`, `[recent webinar](url)`, `[Agentic Innovations for 2026](url)`
+- Use **Edit text** → **H3** or **H4** for the key term at the start (e.g. "Brand Concierge:")
+- Use **Edit link** to add links
+- Use **Edit text** → blockquote or code if needed
 
 ---
 
@@ -124,6 +129,26 @@ Replace these placeholders with your real URLs:
 
 ---
 
+## Edit Text UI Formatting
+
+Use the **Edit text** menu in the editor to apply formatting. All options are styled for the newsletter:
+
+| Option | Use for | Styling |
+|--------|---------|---------|
+| **T** / **¶** | Normal paragraph | Body text, 16px, readable line height |
+| **H1** | Main section title | 32px, bold |
+| **H2** | Section heading | 29px, bold |
+| **H3** | Subsection | 26px, bold |
+| **H4** | Minor heading | 23px, bold |
+| **H5** | Small heading | 20px, bold |
+| **H6** | Smallest heading | 18px, bold |
+| **"** (blockquote) | Quoted text | Left border, italic, grey |
+| **</>** (code) | Code or technical terms | Monospace, light grey background |
+
+**How to use:** Select text → click **Edit text** → choose the format. No manual markdown or HTML needed.
+
+---
+
 ## Styling (Automatic)
 
 The blocks apply this styling automatically:
@@ -131,5 +156,6 @@ The blocks apply this styling automatically:
 - **Header:** Grey label, large bold title, bold date, red separator line
 - **Body:** Black text, blue links (#2176ff), consistent spacing
 - **List:** Disc bullets, bold key terms, blue links
+- **Edit text options:** H1–H6, blockquote, and code are pre-styled for the newsletter
 
-No extra styling is needed if you use the blocks as described.
+No extra styling is needed if you use the blocks and Edit text options as described.

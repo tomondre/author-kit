@@ -362,6 +362,71 @@ body.has-newsletter-page {
   font-weight: 600;
 }
 
+/* Newsletter: headings (H1–H6) from Edit text UI */
+.section.has-newsletter > .default-content h1,
+.section.has-newsletter > .default-content h2,
+.section.has-newsletter > .default-content h3,
+.section.has-newsletter > .default-content h4,
+.section.has-newsletter > .default-content h5,
+.section.has-newsletter > .default-content h6 {
+  margin: 0 0 0.5em 0;
+  font-weight: 600;
+  line-height: var(--heading-line-height);
+  color: var(--color-dark);
+}
+
+.section.has-newsletter > .default-content h1 { font-size: var(--heading-font-size-xxl); }
+.section.has-newsletter > .default-content h2 { font-size: var(--heading-font-size-xl); }
+.section.has-newsletter > .default-content h3 { font-size: var(--heading-font-size-l); }
+.section.has-newsletter > .default-content h4 { font-size: var(--heading-font-size-m); }
+.section.has-newsletter > .default-content h5 { font-size: var(--heading-font-size-s); }
+.section.has-newsletter > .default-content h6 { font-size: var(--heading-font-size-xs); }
+
+.section.has-newsletter > .default-content h1:first-child,
+.section.has-newsletter > .default-content h2:first-child,
+.section.has-newsletter > .default-content h3:first-child,
+.section.has-newsletter > .default-content h4:first-child,
+.section.has-newsletter > .default-content h5:first-child,
+.section.has-newsletter > .default-content h6:first-child {
+  margin-top: 0;
+}
+
+/* Newsletter: blockquote from Edit text UI */
+.section.has-newsletter > .default-content blockquote {
+  margin: 1em 0;
+  padding: 0.5em 0 0.5em 1em;
+  border-left: 4px solid var(--color-gray-400);
+  color: var(--color-gray-700);
+  font-style: italic;
+}
+
+/* Newsletter: code (inline and block) from Edit text UI */
+.section.has-newsletter > .default-content code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  background-color: var(--color-gray-100);
+  border-radius: 4px;
+  color: var(--color-dark);
+}
+
+.section.has-newsletter > .default-content pre {
+  margin: 1em 0;
+  padding: 1em;
+  overflow-x: auto;
+  background-color: var(--color-gray-100);
+  border-radius: 4px;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--color-dark);
+}
+
+.section.has-newsletter > .default-content pre code {
+  padding: 0;
+  background: none;
+}
+
 button {
   cursor: pointer;
 }
