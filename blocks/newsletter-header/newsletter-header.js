@@ -11,10 +11,9 @@ function createDefaultPicture() {
 }
 
 /**
- * Newsletter header block: label, title, date, optional image + badge, red separator.
+ * Newsletter header block: label, title, date, optional image, red separator.
  * Authoring: Row 1 = label (e.g. "PRODUCT NEWSLETTER"), Row 2 = main title, Row 3 = date,
- * Row 4 = optional picture and/or "For Internal Use Only" text.
- * Default: gradient image with "For Internal Use Only" on the right when row 4 is empty.
+ * Row 4 = optional picture. Default gradient image on the right when row 4 is empty.
  */
 export default function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
@@ -57,7 +56,6 @@ export default function init(el) {
   const picture = mediaRow?.querySelector('picture');
   const badgeText = mediaRow?.querySelector('p');
   const useDefaultImage = !picture;
-  const useDefaultBadge = !badgeText;
 
   const wrap = document.createElement('div');
   wrap.className = 'newsletter-header-media-inner';
@@ -67,13 +65,9 @@ export default function init(el) {
     imgWrap.append(picture || createDefaultPicture());
     wrap.append(imgWrap);
   }
-  if (badgeText || useDefaultBadge) {
-    const badge = badgeText || document.createElement('p');
-    if (!badgeText) {
-      badge.textContent = 'For Internal Use Only';
-    }
-    badge.classList.add('newsletter-header-badge');
-    wrap.append(badge);
+  if (badgeText) {
+    badgeText.classList.add('newsletter-header-badge');
+    wrap.append(badgeText);
   }
 
   if (wrap.children.length) {

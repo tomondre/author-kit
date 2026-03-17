@@ -24,14 +24,13 @@ Create a block with class `newsletter-header`. Use a **table** with 4 rows:
 | **Row 1** | H6 or ¶ | Small grey label (uppercase) | `PRODUCT NEWSLETTER` |
 | **Row 2** | H1 | Main title | `Adobe Experience Manager and Agentic Web Newsletter` |
 | **Row 3** | H2 | Date/subtitle | `January and February 2026` |
-| **Row 4** | — | Image + badge (optional) | Add an image and/or `For Internal Use Only` to override defaults. **If row 4 is empty, a default gradient image with "For Internal Use Only" is shown on the right.** |
+| **Row 4** | — | Image (optional) | Add your own image to override. **If row 4 is empty, a default gradient image spans the full height on the right.** |
 
 **How to format:** Select the text in each row → **Edit text** → choose the option above. The block applies the correct newsletter styling (grey label, large title, bold date).
 
 **Row 4 details:**
-- **Default:** When row 4 is omitted or empty, a default gradient image with "For Internal Use Only" badge appears on the right.
-- **Cell 1:** Your custom image (optional)
-- **Cell 2:** Custom badge text (optional)
+- **Default:** When row 4 is omitted or empty, a default gradient image spans the full height of the header on the right (no text overlay).
+- **Custom image:** Add your own image in row 4 to replace the default.
 
 ---
 
@@ -96,7 +95,7 @@ Add more **regular paragraphs** after the list:
 │    Row 1: PRODUCT NEWSLETTER                                │
 │    Row 2: Adobe Experience Manager and Agentic Web...       │
 │    Row 3: January and February 2026                         │
-│    Row 4: [image] | For Internal Use Only                   │
+│    Row 4: [image] (optional, default gradient shown)        │
 │                                                             │
 │  Team,  ← Default content (paragraphs)                      │
 │  [intro paragraphs...]                                      │

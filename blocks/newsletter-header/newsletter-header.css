@@ -21,8 +21,9 @@
 .newsletter-header-media {
   grid-column: 2;
   grid-row: 1 / 4;
-  align-self: start;
-  margin-bottom: var(--spacing-m);
+  align-self: stretch;
+  display: flex;
+  min-height: 0;
 }
 
 .newsletter-header-separator {
@@ -67,27 +68,32 @@
 
 .newsletter-header-media-inner {
   position: relative;
-  flex-shrink: 0;
-  max-width: 320px;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
 }
 
 .newsletter-header-image {
+  position: absolute;
+  inset: 0;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .newsletter-header-image picture {
   display: block;
+  height: 100%;
 }
 
 .newsletter-header-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Badge overlays image when both present */
+/* Badge overlays image when user adds it in row 4 */
 .newsletter-header-media-inner:has(.newsletter-header-image) .newsletter-header-badge {
   position: absolute;
   top: var(--spacing-s);
@@ -98,13 +104,6 @@
   color: #fff;
   text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
   z-index: 1;
-}
-
-.newsletter-header-media-inner:not(:has(.newsletter-header-image)) .newsletter-header-badge {
-  margin: 0;
-  font-size: var(--body-font-size-xs);
-  font-weight: 400;
-  color: var(--color-gray-700);
 }
 
 .newsletter-header-separator {
@@ -128,6 +127,7 @@
 
 @media (width >= 600px) {
   .newsletter-header-media-inner {
-    max-width: 280px;
+    min-width: 200px;
+    max-width: 360px;
   }
 }
