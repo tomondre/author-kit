@@ -21,9 +21,8 @@
 .newsletter-header-media {
   grid-column: 2;
   grid-row: 1 / 4;
-  align-self: start;
-  display: flex;
-  justify-content: flex-end;
+  align-self: stretch;
+  min-height: 120px;
 }
 
 .newsletter-header-separator {
@@ -68,25 +67,28 @@
 
 .newsletter-header-media-inner {
   position: relative;
-  flex-shrink: 0;
+  height: 100%;
   width: 100%;
   max-width: 320px;
+  margin-left: auto;
 }
 
 .newsletter-header-image {
+  height: 100%;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .newsletter-header-image picture {
   display: block;
+  height: 100%;
 }
 
 .newsletter-header-image img {
   display: block;
   width: 100%;
-  height: auto;
-  vertical-align: middle;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Badge overlays image when user adds it in row 4 */
